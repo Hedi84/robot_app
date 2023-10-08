@@ -1,9 +1,7 @@
 require_relative 'board'
-require_relative 'controller'
-require_relative 'router'
+require_relative 'simulator'
 
 board = Board.new
-controller = Controller.new(board)
-router = Router.new(controller)
+simulator = Simulator.new(board)
 
-router.run
+simulator.run

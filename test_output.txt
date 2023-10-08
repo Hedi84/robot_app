@@ -1,0 +1,93 @@
+Place the Robot: PLACE X, Y, F
+> sdfsdf
+Place the Robot: PLACE X, Y, F
+> PLACE 1,2,SOUTH
+> REPORT
+1, 2, SOUTH
+> move
+> REPORT
+1, 1, SOUTH
+> move
+> REPORT
+1, 0, SOUTH
+> move
+> REPORT
+1, 0, SOUTH
+> left
+> REPORT
+1, 0, EAST
+> move
+> REPORT
+2, 0, EAST
+> move
+> REPORT
+3, 0, EAST
+> move
+> report
+4, 0, EAST
+> move
+> report
+4, 0, EAST
+> left
+> move
+> report
+4, 1, NORTH
+> report
+4, 1, NORTH
+> move
+> report
+4, 2, NORTH
+> move
+> report
+4, 3, NORTH
+> move
+> report
+4, 4, NORTH
+> left
+> move
+> report
+3, 4, WEST
+> move
+> report
+2, 4, WEST
+> move
+> report
+1, 4, WEST
+> move
+> report
+0, 4, WEST
+> move
+> report
+0, 4, WEST
+> left
+> report
+0, 4, SOUTH
+> move
+> report
+0, 3, SOUTH
+> move
+> report
+0, 2, SOUTH
+> move
+> report
+0, 1, SOUTH
+> move
+> report
+0, 0, SOUTH
+> left
+> move
+> report
+1, 0, EAST
+> move
+> report
+2, 0, EAST
+> move
+> report
+3, 0, EAST
+> move
+> report
+4, 0, EAST
+> move
+> report
+4, 0, EAST
+> stop

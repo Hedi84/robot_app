@@ -11,11 +11,14 @@ class Board
   end
 
   def place(x_axis, y_axis, direction)
-    return unless [x_axis, y_axis].all? { |i| POSITIONS.include? i } && DIRECTIONS.include?(direction)
+    return unless arguments_valid?(x_axis, y_axis, direction)
 
-    @x = check_move(x_axis.to_i)
-    @y = check_move(y_axis.to_i)
+    @x = x_axis.to_i
+    @y = y_axis.to_i
     @direction = direction
+  
+    # return true if an intial place is set
+    initial_place_set?
   end
 
   def move
@@ -48,7 +51,7 @@ class Board
 
   private
 
-  # no number above 4 or under 0 can be used
+  # no number above 4 or under 0 can be used or the robot moves off the table
   def check_move(place)
     if place > 4
       4
@@ -57,5 +60,13 @@ class Board
     else
       place
     end
+  end
+
+  def arguments_valid? x_axis, y_axis, direction
+    [x_axis, y_axis].all? { |i| POSITIONS.include? i } && DIRECTIONS.include?(direction)
+  end
+
+  def initial_place_set?
+    !@x.nil? && !@y.nil? && !@direction.empty?
   end
 end
