@@ -9,7 +9,7 @@ class Router
     until @placed
       puts 'Place the Robot: PLACE X, Y, F'
       place = gets.chomp
-      @placed = @controller.placement(place) if place.include?('PLACE')
+      @placed = @controller.placement(place) if place.match?(/\W*(PLACE)\s[0-4],{1}[0-4],{1}\D{4,5}/)
     end
 
     while @running
