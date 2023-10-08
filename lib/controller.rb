@@ -9,11 +9,7 @@ class Controller
   def placement(placement)
     args = placement.gsub('PLACE', '').delete(' ').split(',')
     @board.place(args[0], args[1], args[2])
-    if @board.x.nil? || @board.y.nil? || @board.direction.empty?
-      false
-    else
-      true
-    end
+    return true if !@board.x.nil? && !@board.y.nil? && !@board.direction.empty?
   end
 
   def move_robot

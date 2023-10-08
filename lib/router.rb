@@ -12,8 +12,6 @@ class Router
       @placed = @controller.placement(place) if place.include?('PLACE')
     end
 
-    @controller.report
-
     while @running
       action = gets.chomp
       if action.include?('PLACE')

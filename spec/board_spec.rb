@@ -67,4 +67,28 @@ describe 'Board' do
                                                  .and change { board.x }.by(0)
     end
   end
+
+  describe '#turn' do
+    let(:board) { Board.new }
+
+    it 'returns the correct direction for left' do
+      board.place('0', '0', 'SOUTH')
+      expect { board.turn('LEFT') }.to change { board.direction }.from('SOUTH').to('EAST')
+    end
+
+    it 'returns the correct direction for right' do
+      board.place('1', '2', 'EAST')
+      expect { board.turn('RIGHT') }.to change { board.direction }.from('EAST').to('SOUTH')
+    end
+
+    it 'returns WEST when moving left from North' do
+      board.place('0', '0', 'NORTH')
+      expect { board.turn('LEFT') }.to change { board.direction }.from('NORTH').to('WEST')
+    end
+
+    it 'returns NORTH when moving right from WEST' do
+      board.place('4', '4', 'WEST')
+      expect { board.turn('RIGHT') }.to change { board.direction }.from('WEST').to('NORTH')
+    end
+  end
 end
