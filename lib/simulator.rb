@@ -11,13 +11,13 @@ class Simulator
   def run
     until @placed
       place = @view.ask_user_for_place
-      @placed =parse_placement(place)
+      @placed = parse_placement(place)
     end
 
     while @running
       action = @view.get_user_input
       if action.include?('PLACE')
-       parse_placement(action)
+        parse_placement(action)
       else
         route_action(action)
       end

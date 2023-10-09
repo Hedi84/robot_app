@@ -16,7 +16,7 @@ class Board
     @x = x_axis.to_i
     @y = y_axis.to_i
     @direction = direction
-  
+
     # return true if an intial place is set
     initial_place_set?
   end
@@ -62,7 +62,7 @@ class Board
     end
   end
 
-  def arguments_valid? x_axis, y_axis, direction
+  def arguments_valid?(x_axis, y_axis, direction)
     [x_axis, y_axis].all? { |i| POSITIONS.include? i } && DIRECTIONS.include?(direction)
   end
 
